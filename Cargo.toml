@@ -1,6 +1,8 @@
 [package]
 name = "freetype-rs"
-version = "0.1.0"
+description = "Generated unsafe bindings to FreeType 2"
+license = "MIT"
+version = "0.2.13"
 edition = "2021"
 
 [build-dependencies]
