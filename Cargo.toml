@@ -1,5 +1,5 @@
 [package]
-name = "freetype-rs"
+name = "freetype-gen-rs"
 description = "Generated unsafe bindings to FreeType 2"
 license = "MIT"
 version = "0.2.13"
