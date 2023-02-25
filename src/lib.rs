@@ -1,19 +1,16 @@
-#![allow(non_upper_case_globals)]
-#![allow(non_camel_case_types)]
-#![allow(non_snake_case)]
+pub mod error;
+pub mod face;
+pub mod library;
 
-include!(concat!(env!("OUT_DIR"), "/bindings.rs"));
+pub use error::{FontError, FontResult};
+pub use face::FontFace;
+pub use library::FontLibrary;
 
-#[cfg(test)]
-mod tests {
-    use super::*;
+mod sys {
+    #![allow(non_upper_case_globals)]
+    #![allow(non_camel_case_types)]
+    #![allow(non_snake_case)]
+    #![allow(unused)]
 
-    #[test]
-    fn freetype_init() {
-        let mut library = std::ptr::null_mut();
-        unsafe {
-            assert_eq!(FT_Init_FreeType(&mut library), FT_Err_Ok);
-            assert_eq!(FT_Done_FreeType(library), FT_Err_Ok);
-        }
-    }
+    include!(concat!(env!("OUT_DIR"), "/bindings.rs"));
 }
